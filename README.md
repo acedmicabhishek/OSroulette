@@ -2,6 +2,8 @@
 
 Welcome, thrill-seeker, to OSroulette! This isn't your average game. It's a digital dance with destiny, a high-stakes game of Russian Roulette where the prize for losing is... well, let's just say you won't have to worry about your computer problems anymore.
 
+**NOT FOR WINDOWS! BECAUSE I THINK WINDOWS USERS DONT WANNA PLAY THIS, THEY CANT EVEN RE-INSTALL WINDOWS, THAT IS WHY ITS FOR LINUX USERS.**
+
 **EXTREME WARNING:** This is not a joke. These scripts are designed to be destructive. Running them on a real machine **WILL IRREVERSIBLY DELETE YOUR OPERATING SYSTEM AND ALL YOUR FILES.** Please, for the love of all your data, only run this in a disposable virtual machine that you are fully prepared to destroy. You have been warned.
 
 **If you have balls, run it on your main system dickhead.**
@@ -58,3 +60,4 @@ It's a chaotic, unpredictable, and frankly, a much more interesting way to digit
 ---
 
 **Disclaimer:** Seriously, don't run this on any machine you care about. This is a programming exercise in "what not to do" and a bit of dark humor. I am not responsible for any lost data, bricked machines, or existential dread that may result from playing this game. Play safe, and may the odds be ever in your favor.
+
