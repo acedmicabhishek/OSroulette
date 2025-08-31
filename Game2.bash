@@ -49,43 +49,79 @@ dnf_commands=(
     "sudo dnf remove -y '*' :: Removed all packages with dnf. Ouch."
 )
 
-# Generate a random number between 1 and 6
-chamber=$(( ( RANDOM % 6 ) + 1 ))
+play_game() {
+    # Generate a random number between 1 and 6
+    chamber=$(( ( RANDOM % 6 ) + 1 ))
 
-# The bullet is in chamber 1
-bullet=1
+    # The bullet is in chamber 1
+    bullet=1
 
-echo "Welcome to OSroulette 2: Electric Boogaloo!"
-countdown "Spinning the chamber"
+    echo "Welcome to OSroulette 2: Electric Boogaloo!"
+    countdown "Spinning the chamber"
 
-if [ "$chamber" -eq "$bullet" ]; then
-    echo "BANG! You lost."
-    
-    distro=$(get_distro)
-    echo "Detected distribution: $distro"
+    if [ "$chamber" -eq "$bullet" ]; then
+        echo "BANG! You lost."
+        
+        distro=$(get_distro)
+        echo "Detected distribution: $distro"
 
-    # Combine command arrays based on distro
-    commands=("${generic_commands[@]}")
-    if [ "$distro" == "ubuntu" ] || [ "$distro" == "debian" ]; then
-        commands+=("${apt_commands[@]}")
-    elif [ "$distro" == "arch" ]; then
-        commands+=("${pacman_commands[@]}")
-    elif [ "$distro" == "fedora" ] || [ "$distro" == "centos" ]; then
-        commands+=("${dnf_commands[@]}")
+        # Combine command arrays based on distro
+        commands=("${generic_commands[@]}")
+        if [ "$distro" == "ubuntu" ] || [ "$distro" == "debian" ]; then
+            commands+=("${apt_commands[@]}")
+        elif [ "$distro" == "arch" ]; then
+            commands+=("${pacman_commands[@]}")
+        elif [ "$distro" == "fedora" ] || [ "$distro" == "centos" ]; then
+            commands+=("${dnf_commands[@]}")
+        fi
+
+        # Select and execute a random command
+        num_commands=${#commands[@]}
+        random_index=$(( RANDOM % num_commands ))
+        command_string="${commands[$random_index]}"
+        
+        # Extract the command part (before " ::")
+        command_to_run=$(echo "$command_string" | cut -d':' -f1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+        countdown "Executing command in 3 seconds"
+        echo "Executing: $command_string"
+        # Execute the command
+        eval "$command_to_run"
+    else
+        echo "Click. You survived."
     fi
+}
 
-    # Select and execute a random command
-    num_commands=${#commands[@]}
-    random_index=$(( RANDOM % num_commands ))
-    command_string="${commands[$random_index]}"
-    
-    # Extract the command part (before " ::")
-    command_to_run=$(echo "$command_string" | cut -d':' -f1 | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+while true; do
+    clear
+    echo "****************************************************"
+    echo "*                                                  *"
+    echo "*        OSroulette 2 - Electric Boogaloo          *"
+    echo "*                                                  *"
+    echo "****************************************************"
+    echo ""
+    echo "1. Play Game"
+    echo "2. Return to Main Menu"
+    echo "3. Exit"
+    echo ""
+    read -p "Enter your choice [1-3]: " choice
 
-    countdown "Executing command in 3 seconds"
-    echo "Executing: $command_string"
-    # Execute the command
-    eval "$command_to_run"
-else
-    echo "Click. You survived."
-fi
+    case $choice in
+        1)
+            play_game
+            read -p "Press [Enter] to continue..."
+            ;;
+        2)
+            echo "Returning to Main Menu..."
+            exit 0
+            ;;
+        3)
+            echo "Exiting..."
+            exit 0
+            ;;
+        *)
+            echo "Invalid option. Please try again."
+            sleep 2
+            ;;
+    esac
+done

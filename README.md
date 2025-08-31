@@ -10,14 +10,19 @@ Welcome, thrill-seeker, to OSroulette! This isn't your average game. It's a digi
 
 ## How to Play
 
-First, you need to make the scripts executable. Open up your terminal and run:
+The best way to start is by using the main launcher. First, make all the scripts executable:
 
 ```bash
-chmod +x OSroulette/Game.bash
-chmod +x OSroulette/Game2.bash
+chmod +x OSroulette/*.bash
 ```
 
-Now, you're ready to choose your fate.
+Then, run the main launcher:
+
+```bash
+./OSroulette/Play.bash
+```
+
+This will bring up a menu where you can choose which game you want to play. Each game also has its own internal menu that allows you to play, return to the main menu, or exit.
 
 ---
 
