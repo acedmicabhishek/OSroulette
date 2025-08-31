@@ -22,7 +22,7 @@ Then, run the main launcher:
 ./OSroulette/Play.bash
 ```
 
-This will bring up a menu where you can choose which game you want to play. Each game also has its own internal menu that allows you to play, return to the main menu, or exit.
+Now, you're ready to choose your fate.
 
 ---
 
@@ -31,7 +31,7 @@ This will bring up a menu where you can choose which game you want to play. Each
 This is the original, the classic, the purest form of OSroulette.
 
 **How it works:**
-1.  You run the script: `./OSroulette/Game.bash`
+1.  Select the game from main menu.
 2.  The game loads a virtual six-chamber revolver and places a single, deadly "bullet" in one of them.
 3.  The chamber is spun, and a suspenseful countdown begins.
 4.  The trigger is pulled.
@@ -47,7 +47,7 @@ It's simple, elegant, and utterly terrifying.
 Feeling like the classic is too predictable? Welcome to the next level of digital danger.
 
 **How it works:**
-1.  You run the script: `./OSroulette/Game2.bash`
+1.  Select the game from main menu.
 2.  This game also spins a six-chamber revolver, but the "bullet" is far more creative.
 3.  The script cleverly detects what kind of Linux distribution you're running (Debian, Ubuntu, Arch, Fedora, etc.).
 4.  If you lose, it doesn't just delete your files. It picks a random, "spicy" command from a list tailored to your system. This could be anything from a fork bomb that freezes your machine, to reformatting your hard drive, to uninstalling every single package, to just shutting it down.
