@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # OSroulette - The even more dangerous game
 
 # Function to detect Linux distribution
