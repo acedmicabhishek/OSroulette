@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # OSroulette - A dangerous game
 
 
